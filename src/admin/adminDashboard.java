@@ -51,7 +51,6 @@ public class adminDashboard extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         user = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -97,10 +96,6 @@ public class adminDashboard extends javax.swing.JFrame {
         });
         jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 10, 150, -1));
 
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Image");
-        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 108, 80));
-
         user.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         user.setForeground(new java.awt.Color(255, 255, 255));
         user.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -114,7 +109,7 @@ public class adminDashboard extends javax.swing.JFrame {
                 jLabel7MouseClicked(evt);
             }
         });
-        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
+        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, -1, -1));
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 510));
 
@@ -224,7 +219,6 @@ public class adminDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
