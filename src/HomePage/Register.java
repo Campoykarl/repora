@@ -22,6 +22,8 @@ public class Register extends javax.swing.JFrame {
     
     public String destination = "";
     public static String usern;
+    public String answer = "";
+    public String question = "";
     
     public boolean duplicateCheck(){
     
@@ -262,8 +264,8 @@ public class Register extends javax.swing.JFrame {
         try{
         String password = passHash.hashPassword(ps.getText());
             
-        if(db.InsertData("INSERT INTO tbl_user (u_username, u_fname, u_lname, u_phone, u_address, u_pass, u_type, u_image, u_status)"  
-            + "VALUES ('"+user.getText()+"', '"+fna.getText()+"', '"+lna.getText()+"', '"+ct.getText()+"', '"+address.getText()+"', '"+password+"', '"+type.getSelectedItem()+"', '"+destination+"', 'Pending')") == 1){
+        if(db.InsertData("INSERT INTO tbl_user (u_username, u_fname, u_lname, u_phone, u_address, u_pass, u_type, u_image, u_status,  question, answer)"  
+            + "VALUES ('"+user.getText()+"', '"+fna.getText()+"', '"+lna.getText()+"', '"+ct.getText()+"', '"+address.getText()+"', '"+password+"', '"+type.getSelectedItem()+"', '"+destination+"', 'Pending', '"+question+"', '"+answer+"')") == 1){
                         JOptionPane.showMessageDialog(this, "Account Created Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
                         login lf = new login();
                         lf.setVisible(true);

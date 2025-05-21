@@ -59,6 +59,7 @@ public class login extends javax.swing.JFrame {
 
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         login = new javax.swing.JButton();
         user = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -77,6 +78,16 @@ public class login extends javax.swing.JFrame {
         jLabel1.setText("DRIVING VIOLATION");
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 250, 40));
+
+        jLabel7.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Forgot password? Click here");
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, 220, 20));
 
         login.setBackground(new java.awt.Color(255, 102, 0));
         login.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
@@ -103,7 +114,7 @@ public class login extends javax.swing.JFrame {
                 jLabel2MouseClicked(evt);
             }
         });
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, 220, 20));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 400, 220, 20));
 
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -183,6 +194,12 @@ public class login extends javax.swing.JFrame {
        this.dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
 
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+    emailSearch es = new emailSearch();
+    es.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_jLabel7MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -224,6 +241,7 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JButton login;
     private javax.swing.JPasswordField pass;
