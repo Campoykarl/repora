@@ -56,7 +56,7 @@ public class changePass extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -89,7 +89,7 @@ public class changePass extends javax.swing.JFrame {
         });
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 70, 35));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("CHANGE PASSWORD");
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {

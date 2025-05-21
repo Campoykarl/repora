@@ -48,7 +48,7 @@ public class emailSearch extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setMaximumSize(new java.awt.Dimension(617, 488));
         jPanel1.setMinimumSize(new java.awt.Dimension(617, 488));
         jPanel1.setPreferredSize(new java.awt.Dimension(617, 488));
@@ -56,7 +56,7 @@ public class emailSearch extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel8.setText("Username:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 73, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 73, -1));
 
         jButton1.setText("Search");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -64,9 +64,9 @@ public class emailSearch extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 120, 30));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 120, 30));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Forgot Password");
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -87,10 +87,10 @@ public class emailSearch extends javax.swing.JFrame {
                 jLabel9MouseEntered(evt);
             }
         });
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 80, 26));
-        jPanel1.add(em, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 276, 28));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 80, 26));
+        jPanel1.add(em, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 290, 40));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 220));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 300));
 
         pack();
         setLocationRelativeTo(null);

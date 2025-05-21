@@ -54,7 +54,7 @@ public class SecurityQ extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setMaximumSize(new java.awt.Dimension(617, 488));
         jPanel1.setMinimumSize(new java.awt.Dimension(617, 488));
         jPanel1.setPreferredSize(new java.awt.Dimension(617, 488));
@@ -75,7 +75,7 @@ public class SecurityQ extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 120, 30));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("SECURITY QUESTION");
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
