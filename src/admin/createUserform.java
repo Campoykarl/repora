@@ -45,8 +45,8 @@ public class createUserform extends javax.swing.JFrame {
     File selectedFile;
     public String oldpath;
     public String path;
-    //public String answer = "No stored security answers";
-   // public String question = "No stored security questions";
+    public String answer = "";
+    public String question = "";
 
     public int FileExistenceChecker(String path){
         File file = new File(path);
@@ -499,8 +499,8 @@ public class createUserform extends javax.swing.JFrame {
         try{
         String password = passHash.hashPassword(ps.getText());
             
-        if(db.InsertData("INSERT INTO tbl_user (u_username, u_fname, u_lname, u_phone, u_address, u_pass, u_type, u_image, u_status)"  
-            + "VALUES ('"+user.getText()+"', '"+fna.getText()+"', '"+lna.getText()+"', '"+ct.getText()+"', '"+address.getText()+"', '"+password+"', '"+type.getSelectedItem()+"', '"+destination+"', 'Pending')") == 1){
+        if(db.InsertData("INSERT INTO tbl_user (u_username, u_fname, u_lname, u_phone, u_address, u_pass, u_type, u_image, u_status, question, answer)"  
+            + "VALUES ('"+user.getText()+"', '"+fna.getText()+"', '"+lna.getText()+"', '"+ct.getText()+"', '"+address.getText()+"', '"+password+"', '"+type.getSelectedItem()+"', '"+destination+"', 'Pending', '"+question+"', '"+answer+"')") == 1){
             try{
                 if(selectedFile != null && !destination.isEmpty()) {
                    Files.copy(selectedFile.toPath(), new File(destination).toPath(), StandardCopyOption.REPLACE_EXISTING);
