@@ -16,22 +16,22 @@ import net.proteanit.sql.DbUtils;
  *
  * @author SCC-LAB
  */
-public class usersTable extends javax.swing.JFrame {
+public class violationTable extends javax.swing.JFrame {
 
     /**
      * Creates new form usersTable
      */
-    public usersTable() {
+    public violationTable() {
         initComponents();
-        displayUsers();
+        displayviolation();
     }
      
-     public void displayUsers() {
+     public void displayviolation() {
         try {
             dbConnector db = new dbConnector();
             ResultSet rs = db.getData(
-                "SELECT u_id, u_username, u_fname, u_lname, u_phone, u_address, u_image, u_status FROM tbl_user");
-            t_users.setModel(DbUtils.resultSetToTableModel(rs));
+                "SELECT v_id, u_id, u_username, name, type FROM violation");
+            vtable.setModel(DbUtils.resultSetToTableModel(rs));
             rs.close();
         } catch (SQLException e) {
             System.out.println("Error: " + e.getMessage());
@@ -50,7 +50,7 @@ public class usersTable extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        t_users = new javax.swing.JTable();
+        vtable = new javax.swing.JTable();
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/maria.jpg"))); // NOI18N
 
@@ -101,7 +101,7 @@ public class usersTable extends javax.swing.JFrame {
         jLabel1.setText("USER TABLE");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 250, -1));
 
-        t_users.setModel(new javax.swing.table.DefaultTableModel(
+        vtable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -109,7 +109,7 @@ public class usersTable extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane2.setViewportView(t_users);
+        jScrollPane2.setViewportView(vtable);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 500, 470));
 
@@ -135,21 +135,20 @@ public class usersTable extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        createUserform cuf = new createUserform();
-        cuf.status.setEnabled(false);
+        violation cuf = new violation();
         cuf.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        int rowIndex = t_users.getSelectedRow();
+        int rowIndex = vtable.getSelectedRow();
         if(rowIndex < 0){
             JOptionPane.showMessageDialog(null,"Please Select an Item!");
         }else{
             try{
 
                 dbConnector dbc = new dbConnector();
-                TableModel tbl = t_users.getModel();
+                TableModel tbl = vtable.getModel();
                 ResultSet rst = dbc.getData("SELECT * FROM tbl_user WHERE u_id = '"+tbl.getValueAt(rowIndex, 0)+"'");
                 if(rst.next()){
                     createUserform cuf = new createUserform();
@@ -204,20 +203,21 @@ public class usersTable extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(usersTable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(violationTable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(usersTable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(violationTable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(usersTable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(violationTable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(usersTable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(violationTable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new usersTable().setVisible(true);
+                new violationTable().setVisible(true);
             }
         });
     }
@@ -232,6 +232,6 @@ public class usersTable extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable t_users;
+    private javax.swing.JTable vtable;
     // End of variables declaration//GEN-END:variables
 }

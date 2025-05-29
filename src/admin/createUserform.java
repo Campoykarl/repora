@@ -319,7 +319,7 @@ public class createUserform extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("User Name:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(160, 80, 104, 20);
+        jLabel3.setBounds(160, 80, 88, 20);
 
         user.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         user.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
@@ -345,13 +345,13 @@ public class createUserform extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("First Name:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(160, 130, 102, 20);
+        jLabel4.setBounds(160, 130, 89, 20);
 
         jLabel5.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Last Name:");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(160, 180, 100, 20);
+        jLabel5.setBounds(160, 180, 86, 20);
 
         lna.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         lna.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
@@ -377,13 +377,13 @@ public class createUserform extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Contact:");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(160, 230, 74, 20);
+        jLabel7.setBounds(160, 230, 63, 20);
 
         jLabel8.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Address:");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(160, 280, 80, 20);
+        jLabel8.setBounds(160, 280, 65, 20);
 
         address.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         address.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
@@ -404,13 +404,13 @@ public class createUserform extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Password:");
         jPanel1.add(jLabel12);
-        jLabel12.setBounds(160, 330, 93, 20);
+        jLabel12.setBounds(160, 330, 77, 20);
 
         jLabel9.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Type of User:");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(150, 380, 119, 20);
+        jLabel9.setBounds(150, 380, 100, 20);
 
         type.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "User", "Admin" }));
@@ -437,13 +437,13 @@ public class createUserform extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("User ID");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(160, 30, 64, 20);
+        jLabel6.setBounds(160, 30, 59, 20);
 
         jLabel10.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("User Status");
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(150, 450, 101, 20);
+        jLabel10.setBounds(150, 450, 86, 20);
 
         status.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Active", "Pending" }));

@@ -16,12 +16,12 @@ import net.proteanit.sql.DbUtils;
  *
  * @author SCC-LAB
  */
-public class usersTable extends javax.swing.JFrame {
+public class SelectUser extends javax.swing.JFrame {
 
     /**
      * Creates new form usersTable
      */
-    public usersTable() {
+    public SelectUser() {
         initComponents();
         displayUsers();
     }
@@ -44,10 +44,7 @@ public class usersTable extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         t_users = new javax.swing.JTable();
@@ -63,36 +60,14 @@ public class usersTable extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 255, 255), 2), null));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
-        jLabel3.setText("ADD");
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
-            }
-        });
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
-
         jLabel4.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
-        jLabel4.setText("BACK");
+        jLabel4.setText("Select");
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel4MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
-        jLabel5.setText("EDIT");
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
-            }
-        });
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
-
-        jLabel6.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
-        jLabel6.setText("DELETE");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 170, 560));
 
@@ -129,63 +104,21 @@ public class usersTable extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        adminDashboard ad = new adminDashboard();
-        ad.setVisible(true);
-        this.dispose();
+          int rowIndex = t_users.getSelectedRow();
+
+   if (rowIndex < 0) {
+       JOptionPane.showMessageDialog(null, "Please Select An Item!");
+   } else {
+   
+    TableModel model = t_users.getModel();
+    violation sf = new violation();
+    sf.uid.setText(""+model.getValueAt(rowIndex, 0));
+    sf.user.setText(""+model.getValueAt(rowIndex, 2));
+    sf.setVisible(true);
+    this.dispose();
+    
+} 
     }//GEN-LAST:event_jLabel4MouseClicked
-
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        createUserform cuf = new createUserform();
-        cuf.status.setEnabled(false);
-        cuf.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jLabel3MouseClicked
-
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        int rowIndex = t_users.getSelectedRow();
-        if(rowIndex < 0){
-            JOptionPane.showMessageDialog(null,"Please Select an Item!");
-        }else{
-            try{
-
-                dbConnector dbc = new dbConnector();
-                TableModel tbl = t_users.getModel();
-                ResultSet rst = dbc.getData("SELECT * FROM tbl_user WHERE u_id = '"+tbl.getValueAt(rowIndex, 0)+"'");
-                if(rst.next()){
-                    createUserform cuf = new createUserform();
-                    cuf.uid.setText(""+rst.getInt("u_id"));
-                    cuf.user.setText(""+rst.getString("u_username"));
-                    cuf.fna.setText(""+rst.getString("u_fname"));
-                    cuf.lna.setText(""+rst.getString("u_lname"));
-                    cuf.ct.setText(""+rst.getString("u_phone"));
-                    cuf.address.setText(""+rst.getString("u_address"));
-                    cuf.ps.setText(""+rst.getString("u_pass"));
-                    cuf.type.setSelectedItem(""+rst.getString("u_type"));
-                    cuf.status.setSelectedItem(""+rst.getString("u_status"));
-                    cuf.image.setIcon(cuf.ResizeImage(rst.getString("u_image"), null, cuf.image));
-                    cuf.oldpath = rst.getString("u_image");
-                    cuf.path = rst.getString("u_image");
-                    cuf.destination = rst.getString("u_image");
-                    cuf.add.setEnabled(false);
-                    cuf.update.setEnabled(true);
-                    cuf.ps.setEnabled(false);
-
-                    if(rst.getString("u_image").isEmpty()){
-                        cuf.select.setEnabled(true);
-                        cuf.rm.setEnabled(false);
-                    }else{
-                        cuf.select.setEnabled(false);
-                        cuf.rm.setEnabled(true);
-                    }
-                    cuf.setVisible(true);
-                    this.dispose();
-
-                }
-            }catch(SQLException ex){
-                System.out.println(""+ex);
-            }
-        }
-    }//GEN-LAST:event_jLabel5MouseClicked
 
     /**
      * @param args the command line arguments
@@ -204,20 +137,21 @@ public class usersTable extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(usersTable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SelectUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(usersTable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SelectUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(usersTable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SelectUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(usersTable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SelectUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new usersTable().setVisible(true);
+                new SelectUser().setVisible(true);
             }
         });
     }
@@ -225,10 +159,7 @@ public class usersTable extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
